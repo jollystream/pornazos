@@ -1,0 +1,190 @@
+a.a-contenedora-img-avance {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.contenedor-cards {
+    display: flex;
+}
+.contenedor-img, .contenedor-avance {
+    height: auto;
+    overflow: hidden;
+}
+a.a-contenedora-titulo {
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+}
+.contenedor-img-avance {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+h3.titulo-card {
+    margin: 0px;
+    padding: 5px 0px 0px 0px;
+    display: -webkit-box;
+    font-size: 16px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.contenedor-posts-dentro {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contenedor-metadata-card {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 10px 0px;
+}
+img.img-portada, .contenedor-avance video{
+    width: 100%;
+    height: auto;
+}
+
+
+/*proporcion del iframe*/
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.embed-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.iframe-contenedor {
+    max-width: 900px;
+    margin: 0px auto;
+}
+.iframe-contenedor-centrar {
+    background: black;
+}
+
+
+h1.titulo-video-dentro {
+    font-size: 18px;
+    padding: 10px 0px;
+}
+.autor-duracion-calidad-bajo-video {
+    display: flex;
+    justify-content: start;
+    padding: 10px 0px;
+    align-items: center;
+    font-size: 14px;
+}
+.duracion-calidad-contenedor {
+    display: flex;
+}
+.categorias-bajo-video ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0px;
+}
+.categorias-bajo-video ul .categoria a {
+    padding: 8px 12px;
+    display: block;
+    border-radius: 9999px;
+    border: 1px solid #dddddd;
+    margin: 2.5px;
+    font-size: 14px;
+    background: #ececec;
+    color: #666666;
+    text-align: center;
+}
+.categorias-bajo-video ul .categoria a:hover {
+    padding: 8px 12px;
+    display: block;
+    border-radius: 9999px;
+    border: 1px solid #dddddd;
+    margin: 2.5px;
+    font-size: 14px;
+    background: #dddddd;
+    color: #666666;
+    text-align: center;
+}
+.categorias-bajo-video ul .categoria.tags a {
+    margin: 2.5px 2.5px 2.5px 0px;
+    padding: 8px 12px 8px 0px;
+    background: #ffffff00;
+    font-weight: bold;
+    border: none;
+}
+#contenedor > main > div > div.categorias-bajo-video > ul > li:nth-child(12) {
+    display: none;
+}
+div.autor > a {
+    display: block;
+    background: #ececec;
+    color: #666666;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid #dddddd;
+}
+div.autor > a:hover {
+    display: block;
+    background: #dddddd;
+    color: #666666;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid #dddddd;
+}
+.duracion span, .calidad span {
+    font-weight: bold;
+    margin: 0px 12px;
+}
+
+.contenedora-img-avance-hover {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.contenedora-img-avance-hover .contenedor-img, .contenedora-img-avance-hover .contenedor-avance {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+span.metadata-autor a {
+    font-weight: bold;
+}
+span.metadata-autor a:hover {
+    color: #747474;
+}
+h3.titulo-card:hover {
+    color: #747474;
+}
+.contenedor-img {
+    background-image: url(https://plantillasdememes.com/img/plantillas/imagen-no-disponible01601774755.jpg);
+    background-size: cover;
+    background-position-y: center;
+}
+
+
+/*FOOTER*/
+footer.footer-web p {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+footer.footer-web {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 60px auto 0px;
+    border-top: 1px solid #999999;
+    padding: 30px 0px 0px 0px;
+}
