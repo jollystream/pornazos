@@ -1,16 +1,19 @@
 import Head from 'next/head'
-import fetch from 'isomorphic-fetch'
-import PaginadoSearch from '../../componentes/[PaginadoSearch]';
 import Cards from '../../componentes/Cards';
-import Header from '../../componentes/Header';
+import Header from '../../componentes/Header'
 import Navegacion from '../../componentes/Navegacion';
+import { useState, useEffect } from 'react';
 import NavMovil from '../../componentes/NavMovil';
-import { useState } from 'react';
-import CategoriasMenu from '../../componentes/CategoriasMenu';
 import Footer from '../../componentes/Footer';
-export default function Search(props) {
+import obtenerListadoVideos from '../datos/listadoVideosSearch';
+export default function Home(props) {
 
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 769px)');
+    setActive(mediaQuery.matches);
+  }, []);
 
   const openClose = () => {
     if (active) {
@@ -23,165 +26,76 @@ export default function Search(props) {
   return (
     <div className='contenedor-app'>
       <Head>
-        <meta name="RATING" content="RTA-5042-1996-1400-1577-RTA"/>
-        <title>Porn Videos of {props.abuscar} at PORNAZOS.COM</title>
-        <meta name="description" content={`In PORNAZOS.COM you will find the best porn of ${props.abuscar} free and online`} />
-        <meta name="keywords" content={`${props.abuscar}, pornazos, porn`} />
-        <link rel="apple-touch-icon" sizes="180x180" href="https://www.xvideos.com/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="https://www.xvideos.com/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="https://www.xvideos.com/favicon-16x16.png"/>
-        <script async type="text/javascript" src="https://js.juicyads.com/jp.php?c=34b403w2y2a4u4q2u2f4236424&u=https%3A%2F%2Fpornazos.com"></script>
-        <script async type="text/javascript" src="https://js.juicyads.com/jp.php?c=34a4y2x2v2a4u4q2v26423c464&u=http%3A%2F%2Fwww.pornazos.com"></script>
+        <title>Free Porn Videos {props?.busqueda} ❌❌❌ {props?.listadoVideos?.resultados} Results {props?.pagina ? `⭐ Page: ${props?.pagina}`:''}</title>
+        <meta name="description" content="" />
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico"/>
       </Head>
-
+      
       <div className={`contenedor ${active ? 'active' : ''}`} id="contenedor">
 
-        <Header click={openClose} />
+        <Header click={openClose} active={active} />
         <Navegacion click={openClose} active={active} />
         <NavMovil click={openClose} active={active} />
 
         <main className={`main ${active ? active : ''}`}>
-          <h3 className="titulo">Search results for <span>{props.abuscar}.</span></h3>
+          <h1 className="font-semibold text-lg sm:text-2xl pb-5"
+          >Free Porn Videos {props?.busqueda} ❌❌❌ {props?.listadoVideos?.resultados} Results ⭐ Page: {props?.pagina}</h1>
           <div className="grid-videos">
             {
-              props.pos.map(res => {
-                return <Cards key={res.url} titulo={res.titulo} imagen={res.imagen} avance={res.avance} url={res.url}
-                  duracion={res.duracion} calidad={res.calidad} autor={res.autor} />
-              })
+              props?.listadoVideos?.obtenerListadoVideos
+                .filter(video => video.id)  // Filtra los videos que tienen un id
+                .map(res => {
+                  return <Cards key={res?.id} vistas={res.vistas} titulo={res?.titulo} imagen={res?.imagen} url={`${res?.urlVideo}`}
+                    duracion={res?.duracion} calidad={res?.calidad} autor={res?.autor} />
+                })
             }
           </div>
-          {
-              props.pos.length === 0 ? <div className='content-no-videos'>
-                <div className='no-videos'>The result was not found, look for something shorter or click on a category in the menu below.</div>
-                <div className='no-videos-tags'><CategoriasMenu /></div>
-              </div> : <PaginadoSearch urls={props.url} largo={props.largo} buscar={props.abuscar} />
-          }
-          
 
-          <Footer/>
+          <div className="paginado">
+            <ul>
+            {
+              props?.listadoVideos?.paginado.map(res => {
+                return (
+                  <li key={res.pagina}>
+                    {
+                      // Si la urlPagina es "#" o está vacía, muestra un span
+                      res.urlPagina === "#" || !res.urlPagina.length ?
+                      <span>{res.pagina}</span> :
+                      // En otro caso, muestra una etiqueta a
+                      <a href={
+                        // Si la urlPagina es "/search", asigna "#" al atributo href
+                        res.urlPagina === "/search" ? "#" : res.urlPagina
+                      }>{res.pagina}</a>
+                    }
+                  </li>
+                )
+              })
+            }
+            </ul>
+          </div>
+
+          <Footer />
         </main>
-
       </div>
-
-
-
     </div>
   )
 }
 
-Search.getInitialProps = async (ctx) => {
-  const res1 = await fetch(`${process.env.NEXT_PUBLIC_URL_WEB}/api/api`);
-  const res2 = await fetch(`${process.env.NEXT_PUBLIC_URL_WEB}/api/api2`);
-  
-  const data1 =  await res1.json();
-  const data2 =  await res2.json();
+export async function getServerSideProps(context) {
+  const urlOrigen = await context.query.id //context.resolvedUrl;
+  const busqueda = await context.query.k
+  const pag = await context.query.p
 
-  const data = [...data1.posts, ...data2.posts]
+  var listadoVideos = await obtenerListadoVideos(urlOrigen, busqueda, pag);
 
-
-
-
-  const url = ctx.query.id
-  const numPag = url.split('&')
-
-  var resultado1 = [];
-  var resultado2 = [];
-  var resultado3 = [];
-  var resultado4 = [];
-
-  const abuscar = numPag[0].toLowerCase()
-
-  for (let busqueda of data) {
-    let titulo = busqueda.titulo ? busqueda.titulo.toLowerCase() : '' ;
-    if (titulo.indexOf(abuscar) !== -1) {
-      resultado1.push({
-        titulo: busqueda.titulo,
-        url: busqueda.url,
-        descripcion: busqueda.descripcion,
-        tags: busqueda.tags,
-        imagen: busqueda.imagen,
-        iframe: busqueda.iframe,
-        autor: busqueda.autor,
-        avance: busqueda.avance,
-        calidad: busqueda.calidad,
-        duracion: busqueda.duracion
-      });
-    };
-  };
-  for (let busqueda of data) {
-    let titulo = busqueda.tags ? busqueda.tags.toLowerCase() : '' ;
-    if (titulo.indexOf(abuscar) !== -1) {
-      resultado2.push({
-        titulo: busqueda.titulo,
-        url: busqueda.url,
-        descripcion: busqueda.descripcion,
-        tags: busqueda.tags,
-        imagen: busqueda.imagen,
-        iframe: busqueda.iframe,
-        autor: busqueda.autor,
-        avance: busqueda.avance,
-        calidad: busqueda.calidad,
-        duracion: busqueda.duracion
-      });
-    };
-  };
-  for (let busqueda of data) {
-    let titulo = busqueda.descripcion ? busqueda.descripcion.toLowerCase() : '';
-    if (titulo.indexOf(abuscar) !== -1) {
-      resultado3.push({
-        titulo: busqueda.titulo,
-        url: busqueda.url,
-        descripcion: busqueda.descripcion,
-        tags: busqueda.tags,
-        imagen: busqueda.imagen,
-        iframe: busqueda.iframe,
-        autor: busqueda.autor,
-        avance: busqueda.avance,
-        calidad: busqueda.calidad,
-        duracion: busqueda.duracion
-      });
-    };
-  };
-  for (let busqueda of data) {
-    let titulo = busqueda.autor ? busqueda.autor.toLowerCase() : 'porn'
-    if (titulo.indexOf(abuscar) !== -1) {
-      resultado4.push({
-        titulo: busqueda.titulo,
-        url: busqueda.url,
-        descripcion: busqueda.descripcion,
-        tags: busqueda.tags,
-        imagen: busqueda.imagen,
-        iframe: busqueda.iframe,
-        autor: busqueda.autor,
-        avance: busqueda.avance,
-        calidad: busqueda.calidad,
-        duracion: busqueda.duracion
-      });
-    };
-  };
-
-  var resultados = [...resultado1, ...resultado2, ...resultado3, ...resultado4]
-
-  // eliminar duplicados
-  var newArray = [];
-  var lookupObject = {};
-  function removeDuplicates(originalArray, prop) {
-    for (var i in originalArray) {
-      lookupObject[originalArray[i][prop]] = originalArray[i];
+  return {
+    props: {
+      listadoVideos: listadoVideos,
+      busqueda: busqueda,
+      pagina: pag,
     }
-    for (i in lookupObject) {
-      newArray.push(lookupObject[i]);
-    }
-    return newArray;
-  }
-  removeDuplicates(resultados, "iframe");
-
-  const largo = newArray.length
-  var pagActual = parseInt(numPag[1]);
-  if (!pagActual) {
-    pagActual = 0
   };
-
-  const Actual = newArray.slice(pagActual * 36, pagActual * 36 + 36);
-  return { pos: Actual, url: pagActual, largo: largo, abuscar: abuscar }
 }

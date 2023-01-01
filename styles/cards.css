@@ -76,7 +76,7 @@ h1.titulo-video-dentro {
 }
 .autor-duracion-calidad-bajo-video {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     padding: 10px 0px;
     align-items: center;
     font-size: 14px;

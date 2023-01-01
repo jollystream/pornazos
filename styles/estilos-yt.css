@@ -5,7 +5,6 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
     background: #f9f9f9;
 }
 
@@ -83,7 +82,6 @@ a {
 }
 
 .header .contenedor-logo .logo  {
-	font-family: 'Bebas Neue', cursive;
 	font-size: 20px;
 	position: relative;
 	top: 2px;
@@ -97,9 +95,13 @@ a {
     align-items: center;
     -moz-box-pack: center;
     justify-content: center;
+    padding:0px 0px 10px 20px;
+}
+@media(min-width:769px){
+	.header .barra-busqueda {
     padding:10px 0px 10px 20px;
 }
-
+}
 .header .barra-busqueda input {
 	min-width: 60%;
 	padding: 0 15px;
@@ -107,7 +109,6 @@ a {
 	line-height: 35px;
 	border: 1px solid #ccc;
 	font-size: 16px;
-	font-family: 'Open Sans', sans-serif;
 }
 
 .header .barra-busqueda button {
@@ -130,7 +131,7 @@ a {
     display: flex;
     -moz-box-align: center;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .header .botones-header button {
@@ -303,7 +304,7 @@ nav.menu-lateral2.movil {
     display: -moz-box;
     display: flex;
     -moz-box-pack: justify;
-    justify-content: start;
+    justify-content: flex-start;
     width: 200px !important;
     padding:0px 15px 15px 0px;
     -moz-box-align: center;
@@ -421,7 +422,6 @@ a#logo-movil {
 	}
 }
 .logo {
-    font-family: 'Bebas Neue', cursive;
     font-size: 20px;
     position: relative;
     top: 2px;
