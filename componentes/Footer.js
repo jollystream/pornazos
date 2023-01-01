@@ -9,7 +9,7 @@ const Footer = () => {
             </p>
             <p className="footer-p3">
                 Have something to say? Please contact us directly (Warning: we cannot read all emails).
-                Advertising, Traffic Buying, Sponsorship Webmasters click here. PORNAZOS.COM Copyright 2021-2022. All rights reserved. Thanks for visiting our free sex site.
+                Advertising, Traffic Buying, Sponsorship Webmasters click here. packporno.COM Copyright 2021-2022. All rights reserved. Thanks for visiting our free sex site.
             </p>
         </footer>
     )

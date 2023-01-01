@@ -1,10 +1,10 @@
 const Cookies = (props) => {
   return (
     <div>
-      <h2 class="text-3xl mb-3">PORNAZOS.COM Privacy Policy</h2>
+      <h2 class="text-3xl mb-3">packporno.COM Privacy Policy</h2>
       <i class="mb-3 block">Last Updated: January 1, 2022</i>
       <p class="mb-3">
-        This is the privacy policy for www.pornazos.com, “our site” and related
+        This is the privacy policy for www.packporno.com, “our site” and related
         mobile applications.
       </p>
       <p class="mb-3">
@@ -174,7 +174,7 @@ const Cookies = (props) => {
           what your interests and preferences are, and to improve our marketing
           by making it more relevant to your interests and preferences. You can
           opt out from having your personal data used for marketing analysis by
-          emailing pornazos@gmail.com.
+          emailing packporno@gmail.com.
         </li>
         <li class="mb-3">
           To improve our marketing communications, we use a similar technology
@@ -238,7 +238,7 @@ const Cookies = (props) => {
           carry out marketing analysis to determine what products and services
           may be relevant to the interests of our readers. You can opt out from
           having your personal data used for marketing analysis by emailing
-          pornazos@gmail.com.
+          packporno@gmail.com.
         </li>
         <li class="mb-3">
           Performance of a contract with you (or in order to take steps prior to
@@ -475,7 +475,7 @@ const Cookies = (props) => {
       <p class="mb-3">
         You can decide not to receive these emails at any time and will be able
         to “unsubscribe” directly by clicking a link in the email or by emailing
-        pornazos@gmail.com.
+        packporno@gmail.com.
       </p>
       <p class="mb-3">
         <em>Responding to your queries or complaints</em>
@@ -559,7 +559,7 @@ const Cookies = (props) => {
         <li class="mb-3">
           If you would like to have a copy of the personal data we hold on you
           or if you think that we hold incorrect personal data about you, please
-          write to the Data Protection Officer at pornazos@gmail.com. We will
+          write to the Data Protection Officer at packporno@gmail.com. We will
           deal with requests for copies of your personal data or for correction
           of your personal data within one month. If your request is complicated
           or if you have made a large number of requests, it may take us longer.
@@ -587,12 +587,12 @@ const Cookies = (props) => {
         </li>
         <li class="mb-3">
           If you do not want us to use your personal data for marketing
-          analysis, you can do so by emailing pornazos@gmail.com.
+          analysis, you can do so by emailing packporno@gmail.com.
         </li>
       </ul>
       <p class="mb-3">
         If you want to make any of these requests, please contact
-        pornazos@gmail.com.
+        packporno@gmail.com.
       </p>
       <p class="mb-3">
         We may need to request specific information from you to help us confirm
@@ -604,7 +604,7 @@ const Cookies = (props) => {
         and your business relationship with us is mainly for personal, family or
         household purposes, you may ask us about the information we release to
         other organizations for their marketing purposes. To make such a
-        request, please send an email to pornazos@gmail.com with “Request for
+        request, please send an email to packporno@gmail.com with “Request for
         California privacy information” in the subject line. You may make this
         type of request once every calendar year. We will email you a list of
         categories of personal data we revealed to other organizations for their
@@ -633,7 +633,7 @@ const Cookies = (props) => {
       <p class="mb-3">
         If you need to contact us about your personal information or believe
         that we have violated your privacy rights, please email us at
-        pornazos@gmail.com. You may visit www.priv.gc.ca for more information
+        packporno@gmail.com. You may visit www.priv.gc.ca for more information
         about your privacy rights.
       </p>
       <p class="mb-3">
@@ -642,7 +642,7 @@ const Cookies = (props) => {
       <p class="mb-3">
         If you have any questions about how we use your personal data or if you
         have a concern about how your personal data is used, please contact the
-        Data Protection Officer at pornazos@gmail.com.
+        Data Protection Officer at packporno@gmail.com.
       </p>
       <p class="mb-3">
         Complaints will be dealt with by the Data Protection Officer and will be
@@ -654,7 +654,7 @@ const Cookies = (props) => {
       </p>
       <p class="mb-3">
         If you have a question about anything else, please contact us
-        pornazos@gmail.com.
+        packporno@gmail.com.
       </p>
       <p class="mb-3" id="cookies">
         Changes to the Privacy Policy
@@ -896,7 +896,7 @@ const Cookies = (props) => {
       </ul>
       <p class="mb-3">
         If you would like to contact us about cookies please email
-        pornazos@gmail.com.
+        packporno@gmail.com.
       </p>
     </div>
   );

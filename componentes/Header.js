@@ -44,7 +44,7 @@ const Header = (props) => {
           }
         </button>
         <Link href={process.env.NEXT_PUBLIC_URL_WEB}>
-          <a className="font-black text-xl text-black">PORNAZOS</a>
+          <a className="font-black text-xl text-black">PACKPORNO</a>
         </Link>
       </div>
 

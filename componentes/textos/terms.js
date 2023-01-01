@@ -1,7 +1,7 @@
 const Terminos = (props) => {
   return (
     <div>
-      <h2 class="text-3xl mb-3">pornazos.com Terms of Service Agreement</h2>
+      <h2 class="text-3xl mb-3">packporno.com Terms of Service Agreement</h2>
       <i class="mb-3 block">
         Created: September 10, 2017, Last Updated: January 1, 2022
       </i>
@@ -96,7 +96,7 @@ const Terminos = (props) => {
             </li>
             <li class="mb-3">
               We may change these terms on one or more occasions by updating
-              this webpage, pornazos.com/p/terms. The top of the terms will
+              this webpage, packporno.com/p/terms. The top of the terms will
               tell you when we last updated them. Changes will take effect on
               the “last updated” date identified at the top of the terms.
               Changes will not operate retroactively. We will try to notify you
@@ -119,7 +119,7 @@ const Terminos = (props) => {
             <li class="mb-3">
               g. If you have any questions about these terms, or any comments,
               complaints, or support related issues, you may also contact us at
-              pornazos@gmail.com and we will try to get back to you by the end
+              packporno@gmail.com and we will try to get back to you by the end
               of the next business day.
             </li>
           </ol>
@@ -197,7 +197,7 @@ const Terminos = (props) => {
           pedophilic activity. We only allow visual media of consenting adults
           for consenting adults on this Website. If you see any visual media,
           real or simulated, depicting minors engaged in sexual activity within
-          the Website, please report this to us at pornazos@gmail.com, include
+          the Website, please report this to us at packporno@gmail.com, include
           with your report all appropriate evidence, including the date and time
           of identification. We will immediately investigate all reports and
           take appropriate action. We fully cooperate with any law-enforcement
@@ -245,7 +245,7 @@ const Terminos = (props) => {
             </li>
             <li class="mb-3">
               Prohibited commercial use of the content does not include showing
-              content through the pornazos.com embeddable player on an
+              content through the packporno.com embeddable player on an
               ad-enabled blog or website, subject to the requirement that you
               obtain our advance written consent before using the content for
               any of the following commercial uses:
@@ -289,8 +289,8 @@ const Terminos = (props) => {
               the Websites. Nothing contained on the Website should be construed
               as granting, by implication or otherwise, any license or right to
               use any marks displayed on the Website, meta tags, or any other
-              “hidden text” using marks that belong to pornazos.com and its
-              licensors, without advanced written permission from pornazos.com
+              “hidden text” using marks that belong to packporno.com and its
+              licensors, without advanced written permission from packporno.com
               or the third party who may own the mark.
             </li>
             <li class="mb-3">
@@ -505,7 +505,7 @@ const Terminos = (props) => {
               We have a separate privacy policy posted on the Website at
               <a
                 class="font-semibold underline ml-1 mr-1"
-                href="https://www.pornazos.com/p/privacy"
+                href="https://www.packporno.com/p/privacy"
               >
                 privacy
               </a>
@@ -591,7 +591,7 @@ const Terminos = (props) => {
               through the Website. We may correct any errors or omissions in any
               portion of the Website. If you believe you have found errors or
               omissions on the Website, you may bring them to our attention by
-              contacting our website support department at pornazos@gmail.com.
+              contacting our website support department at packporno@gmail.com.
             </li>
           </ol>
         </li>
@@ -977,7 +977,7 @@ const Terminos = (props) => {
                   You may, and we recommend that you print these terms on your
                   printer or save them to your computer. If you are having
                   trouble printing a copy, please email us at
-                  pornazos@gmail.com.
+                  packporno@gmail.com.
                 </li>
                 <li class="mb-3">
                   <strong>
@@ -985,7 +985,7 @@ const Terminos = (props) => {
                   </strong>{" "}
                   We may change these terms if we believe necessary to operate
                   this Website. We will try to post changes on the Website
-                  pornazos.com/legal#terms at least 15 days before they become
+                  packporno.com/legal#terms at least 15 days before they become
                   effective. Changes will become effective on the last updated
                   date noted at the top of the revised terms, but changes will
                   not apply to ongoing disputes or to disputes arising out of
@@ -999,7 +999,7 @@ const Terminos = (props) => {
                   your exclusive remedy is to stop accessing the Website. If you
                   need more information about the changes or have any other
                   questions or comments about the changes, please contact us at
-                  pornazos@gmail.com
+                  packporno@gmail.com
                 </li>
                 <li class="mb-3">
                   <strong>
@@ -1204,7 +1204,7 @@ const Terminos = (props) => {
               </ol>
             </li>
           </ol>
-          <p class="mb-3">pornazos@gmail.com</p>
+          <p class="mb-3">packporno@gmail.com</p>
           <ol class="mt-3 ml-3 mb-3 list-decimal">
             <li class="mb-3">
               <strong>

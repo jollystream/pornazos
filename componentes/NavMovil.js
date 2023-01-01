@@ -20,7 +20,7 @@ const NavMovil = (props) => {
             )
           }
 					</button>
-					<span className="font-black text-xl text-black">PORNAZOS</span>
+					<span className="font-black text-xl text-black">PACKPORNO</span>
 				</div>
 				<div className="caja-mavegacion-scroll">
 					<CategoriasMenu/>
