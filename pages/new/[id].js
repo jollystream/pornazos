@@ -5,7 +5,7 @@ import Navegacion from '../../componentes/Navegacion';
 import { useState, useEffect } from 'react';
 import NavMovil from '../../componentes/NavMovil';
 import Footer from '../../componentes/Footer';
-import obtenerListadoVideos from '../datos/listadoVideosPaginado';
+import obtenerListadoVideos from '../../datos/listadoVideosPaginado';
 export default function Home(props) {
 
   const [active, setActive] = useState(false);

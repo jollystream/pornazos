@@ -5,7 +5,7 @@ import Navegacion from '../../componentes/Navegacion';
 import { useState, useEffect } from 'react';
 import NavMovil from '../../componentes/NavMovil';
 import Footer from '../../componentes/Footer';
-import obtenerListadoVideos from '../datos/listadoVideosPaginado';
+import obtenerListadoVideos from '../../datos/listadoVideosPaginado';
 import Dmca from '../../componentes/textos/dmca';
 import Privacidad from '../../componentes/textos/privacy';
 import Terminos from '../../componentes/textos/terms';

@@ -7,8 +7,8 @@ import Navegacion from "../../componentes/Navegacion";
 import NavMovil from "../../componentes/NavMovil";
 import Cards from "../../componentes/Cards";
 import Footer from "../../componentes/Footer";
-import videoIndividual from '../../pages/datos/videoIndividual'
-import obtenerListadoVideos from '../../pages/datos/listadoVideosSearch';
+import videoIndividual from '../../datos/videoIndividual'
+import obtenerListadoVideos from '../../datos/listadoVideosSearch';
 
 export default function Video(props) {
 
