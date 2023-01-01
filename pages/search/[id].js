@@ -42,7 +42,7 @@ export default function Home(props) {
 
         <main className={`main ${active ? active : ''}`}>
           <h1 className="font-semibold text-lg sm:text-2xl pb-5"
-          >Free Porn Videos {props?.busqueda} ❌❌❌ {props?.listadoVideos?.resultados} Results ⭐ Page: {props?.pagina}</h1>
+          >Free Porn Videos {props?.busqueda} ❌❌❌ {props?.listadoVideos?.resultados} Results ⭐ Page: {props?.pagina} .</h1>
           <div className="grid-videos">
             {
               props?.listadoVideos?.obtenerListadoVideos
