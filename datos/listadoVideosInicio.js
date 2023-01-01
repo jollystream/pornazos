@@ -19,6 +19,7 @@ export default async function controller() {
       var titulo = titulo ? titulo : null
       
       var urlVideo = $(this).find(".thumb-block .thumb a").attr('href').replace('/video','/video/');
+      urlVideo = urlVideo.replace('/regional/', '/')
       var urlVideo = urlVideo ? urlVideo : null
 
       var imagen = $(this).find(".thumb-block .thumb img").attr('data-src');
