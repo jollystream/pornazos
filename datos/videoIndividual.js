@@ -18,6 +18,13 @@ export default async function controller(props) {
   let iframeOrigen = $("#copy-video-embed").attr('value');
   let iframe = `${iframeOrigen.slice(0,7)} sandbox="allow-same-origin allow-scripts" ${iframeOrigen.slice(8,999)}`
   let vistas = $("#v-views > strong.mobile-hide").text();
+  let foto = $("head > meta:nth-child(14)").attr('content').replace('thumbs169ll/', 'thumbs169lll/');
+  let duracionSegundos = $("head > meta:nth-child(13)").attr('content');
+  var jsonLD = $("script[type='application/ld+json']").text();
+  var jsonLD = JSON.parse(jsonLD);
+  let uploadDate = jsonLD?.uploadDate;
+  let durationJson = jsonLD?.duration;
+  let contentUrl = jsonLD?.contentUrl;
 
   let obtenerListadoTags = [];
   $(contenedor)
@@ -35,5 +42,6 @@ export default async function controller(props) {
   
   const listadoTags = obtenerListadoTags.filter(item => item.tag !== '');
 
-  return {titulo, duracion, calidad, autor, actriz1, actriz2, listadoTags, iframe, vistas};
+  return {titulo, duracion, calidad, autor, actriz1, actriz2, durationJson,
+    listadoTags, iframe, vistas, foto, duracionSegundos, jsonLD, uploadDate, contentUrl};
 }

@@ -9,6 +9,7 @@ import Cards from "../../componentes/Cards";
 import Footer from "../../componentes/Footer";
 import videoIndividual from '../../datos/videoIndividual'
 import obtenerListadoVideos from '../../datos/listadoVideosSearch';
+import { VideoJsonLd, BreadcrumbJsonLd, WebPageJsonLd } from 'next-seo';
 
 export default function Video(props) {
 
@@ -30,12 +31,54 @@ export default function Video(props) {
   return (
     <div>
       <Head>
-        <title>{`${props?.video?.autor} - ${props?.video?.titulo} - ${props?.video?.actriz1} - ${props?.video?.actriz2}`}</title>
-        <meta name="description" content={`${props?.video?.actriz1} - ${props?.video?.actriz2} - ${props?.video?.autor} - ${props?.video?.titulo} - ${props?.video?.listadoTags?.[0]?.tag} - ${props?.video?.listadoTags?.[1]?.tag} - ${props?.video?.listadoTags?.[2]?.tag} - ${props?.video?.listadoTags?.[3]?.tag} - ${props?.video?.listadoTags?.[4]?.tag}`} />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
+        <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1, notranslate' />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>{`${props?.video?.autor} - ${props?.video?.titulo} - ${props?.video?.actriz1} - ${props?.video?.actriz2}`}</title>
+        <meta name="description" content={`${props?.video?.actriz1} - ${props?.video?.actriz2} - ${props?.video?.autor} - ${props?.video?.titulo} - ${props?.video?.listadoTags?.[0]?.tag} - ${props?.video?.listadoTags?.[1]?.tag} - ${props?.video?.listadoTags?.[2]?.tag} - ${props?.video?.listadoTags?.[3]?.tag} - ${props?.video?.listadoTags?.[4]?.tag}`}  />
+        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_URL_WEB}${props?.urlCanonical}`}  />
+        <meta property="og:locale" content="en_US"  />
+        <meta property="og:type" content="video.movie"  />
+        <meta property="og:duration" content={`${props?.video?.duracionSegundos}`}></meta>
+        <meta property="og:title" content={`${props?.video?.autor} - ${props?.video?.titulo} - ${props?.video?.actriz1} - ${props?.video?.actriz2}`}  />
+        <meta property="og:description" content={`${props?.video?.actriz1} - ${props?.video?.actriz2} - ${props?.video?.autor} - ${props?.video?.titulo} - ${props?.video?.listadoTags?.[0]?.tag} - ${props?.video?.listadoTags?.[1]?.tag} - ${props?.video?.listadoTags?.[2]?.tag} - ${props?.video?.listadoTags?.[3]?.tag} - ${props?.video?.listadoTags?.[4]?.tag}`}  />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_URL_WEB}${props?.urlCanonical}`}  />
+        <meta property="og:site_name" content="PORNAZOS.COM"  />
+        <meta property="og:image" content={`${props?.video?.foto}`}  />
+        <meta property="og:image:width" content="600"  />
+        <meta property="og:image:height" content="337"  />
+        <meta property="og:image:type" content="image/jpg"  />
+        <meta name="author" content="PORNAZOS.COM"  />
+        <meta name="twitter:card" content="summary_large_image"  />
       </Head>
+      <VideoJsonLd
+        name={`${props?.video?.autor} - ${props?.video?.titulo} - ${props?.video?.actriz1} - ${props?.video?.actriz2}`}
+        description={`${props?.video?.actriz1} - ${props?.video?.actriz2} - ${props?.video?.autor} - ${props?.video?.titulo} - ${props?.video?.listadoTags?.[0]?.tag} - ${props?.video?.listadoTags?.[1]?.tag} - ${props?.video?.listadoTags?.[2]?.tag} - ${props?.video?.listadoTags?.[3]?.tag} - ${props?.video?.listadoTags?.[4]?.tag}`}
+        contentUrl={`${props?.video?.contentUrl}`}
+        uploadDate={`${props?.video?.uploadDate}`}
+        duration={`${props?.video?.durationJson}`}
+        thumbnailUrls={[props?.video?.foto]}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: props?.video?.autor,
+            item: `${process.env.NEXT_PUBLIC_URL_WEB}/search/?k=${props?.video?.autor?props?.video?.autor?props?.video?.autor:"porn":"porn"}`,
+          },
+          {
+            position: 2,
+            name: props?.video?.titulo,
+            item: `${process.env.NEXT_PUBLIC_URL_WEB}${props?.urlCanonical}`,
+          }
+        ]}
+      />
+      <WebPageJsonLd
+        description="Free Porn Video pornazos.com"
+        id="https://pornazos.com/#corporation"
+      />
 
       <div className={`contenedor ${active ? "active" : ""}`} id="contenedor">
         <Header click={openClose} active={active} />
@@ -165,7 +208,7 @@ export default function Video(props) {
                     }`}
                   >
                     <a className="py-1 px-3 rounded-xl bg-red-600 text-white font-semibold inline-block 
-                    hover:bg-red-700 transition-all duration-300  mb-2">
+                    hover:bg-red-700 transition-all duration-300 mr-2 mb-2">
                       {props?.video?.actriz2
                         ? props?.video?.actriz2
                           ? props?.video?.actriz2
@@ -231,15 +274,20 @@ const tag3 = video?.autor;
 const tag4 = video?.actriz1;
 const relacionados = `${tag1}, ${tag2}, ${tag3}, ${tag4}`
 
+console.log(video?.jsonLD)
+
 var listadoVideos = await obtenerListadoVideos(relacionados, pag);
-  
+const urlCanonical = context.resolvedUrl;
+
+console.log(video)
 const posInit = ''
   return {
     props: {
       pos:posInit,
       video: video,
       listadoVideos: listadoVideos,
-      relacionados: relacionados
+      relacionados: relacionados,
+      urlCanonical: urlCanonical
     }
   };
 }
