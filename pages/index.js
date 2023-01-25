@@ -48,6 +48,7 @@ export default function Home(props) {
         <meta property="og:image:type" content="image/jpg"  />
         <meta name="author" content="PORNAZOS"  />
         <meta name="twitter:card" content="summary_large_image"  />
+        <meta name="juicyads-site-verification" content="213e131a914d6ebca9436233ae29c58e"/>
       </Head>
       <BreadcrumbJsonLd
         itemListElements={[
