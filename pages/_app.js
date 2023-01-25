@@ -7,12 +7,14 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import NextNProgress from "nextjs-progressbar";
 import Popcash from '../componentes/popcash';
+import JuicyAds from '../componentes/juicyads';
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
     <NextNProgress color="red"/>
     <Popcash/>
+    <JuicyAds/>
     <Component {...pageProps}/>
   </>
   );
